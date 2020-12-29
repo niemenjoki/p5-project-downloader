@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background: #eee;
+}
+
+hgroup {
+  text-align: center;
+  margin: 3em auto 0 auto;
+  max-width: 500px;
+}
+
+h1 {
+  font-weight: 300;
+  color: #636363;
+}
+
+form {
+  width: 380px;
+  margin: 3em auto;
+  padding: 3em 2em 2em 2em;
+  background: #fafafa;
+  border: 1px solid #ebebeb;
+  box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px,
+    rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px;
+}
+
+footer {
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+}
+
+footer p {
+  color: #888;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+}
+
+footer a {
+  color: #4a89dc;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+footer a:hover {
+  color: #666;
+  text-decoration: underline;
+}
+
+footer a:focus {
+  outline: none;
+}

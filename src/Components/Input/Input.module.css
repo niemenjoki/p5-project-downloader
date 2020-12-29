@@ -1,0 +1,101 @@
+.Input {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+.InputField {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  -webkit-appearance: none;
+  display: block;
+  background: #fafafa;
+  color: #636363;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #757575;
+}
+
+.InputField:focus {
+  outline: none;
+}
+
+.InputLabel {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: all 0.2s ease;
+}
+
+.InputField:focus ~ .InputLabel,
+.InputField.Used ~ .InputLabel {
+  top: -15px;
+  transform: scale(0.75);
+  left: -15px;
+  color: #4a89dc;
+}
+
+.Underline {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.Underline:before,
+.Underline:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #4a89dc;
+  transition: all 0.2s ease;
+}
+
+.Underline:before {
+  left: 50%;
+}
+
+.Underline:after {
+  right: 50%;
+}
+
+.InputField:focus ~ .Underline:before,
+.InputField:focus ~ .Underline:after {
+  width: 50%;
+}
+
+.Highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.InputField:focus ~ .Highlight {
+  animation: toggleHighlight 0.3s ease;
+}
+
+.Error {
+  font-size: 14px;
+  height: 20px;
+  width: 50%;
+  margin: -20px auto 0 auto;
+}
+
+@keyframes toggleHighlight {
+  from {
+    background: #4a89dc;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}

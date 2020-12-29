@@ -1,0 +1,37 @@
+{
+  "name": "p5-project-downloader",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.21.1",
+    "file-saver": "^2.0.5",
+    "jszip": "^3.5.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.0",
+    "react-spinners-kit": "^1.9.1"
+  },
+  "scripts": {
+    "start-client": "react-scripts start",
+    "build": "react-scripts build && (cd server && npm install)",
+    "start": "cd server && npm start"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
