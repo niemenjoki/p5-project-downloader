@@ -1,6 +1,10 @@
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](paypal.me/jnsjknn)
+
 # p5-project-downloader
 
 An app to download a copy of all the projects from one's [p5.js web editor](https://editor.p5js.org) (Only js, css and html files are currently supported). The app was inspired by [this Reddit post](https://www.reddit.com/r/p5js/comments/kew2gc).
+
+The app is currently hosted on Heroku with a free dyno which means it may be temporarily unavailable. If you can't access the app, try again in a few minutes.
 
 ### What is p5.js?
 
