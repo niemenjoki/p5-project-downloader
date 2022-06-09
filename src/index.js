@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-import zipper from "./zipper";
+import getZip from "./utils/getZip";
 import LanguageToggler from "./Components/LanguageToggler/LanguageToggler";
 import Button from "./Components/Button/Button";
 import Input from "./Components/Input/Input";
@@ -18,7 +18,7 @@ const App = () => {
     const languagePreference = localStorage.getItem("languagePreference");
     if (languagePreference) setLanguage(languagePreference);
   });
-  const updateUsernameHandler = value => {
+  const updateUsernameHandler = (value) => {
     if (!value.length > 0) {
       setButtonStatus("DISABLED");
     } else {
@@ -47,7 +47,7 @@ const App = () => {
 
   const downloadFiles = async () => {
     if (projects.length > 0) {
-      zipper(projects);
+      getZip(projects);
     }
   };
 
@@ -76,9 +76,9 @@ const App = () => {
         <p>
           {content.problemBefore[language]}{" "}
           <a
-            href="https://github.com/jnsjknn/p5-project-downloader/issues/new"
-            target="_blank"
-            rel="noreferrer"
+            href='https://github.com/jnsjknn/p5-project-downloader/issues/new'
+            target='_blank'
+            rel='noreferrer'
           >
             {content.problemLink[language]}
           </a>
@@ -87,9 +87,9 @@ const App = () => {
         <p>
           {content.contributeBefore[language]}{" "}
           <a
-            href="https://github.com/jnsjknn/p5-project-downloader"
-            target="_blank"
-            rel="noreferrer"
+            href='https://github.com/jnsjknn/p5-project-downloader'
+            target='_blank'
+            rel='noreferrer'
           >
             {content.contributeLink[language]}
           </a>
@@ -97,7 +97,7 @@ const App = () => {
         </p>
         <p>
           {content.createdBy[language]}{" "}
-          <a href="https://github.com/jnsjknn" target="_blank" rel="noreferrer">
+          <a href='https://github.com/jnsjknn' target='_blank' rel='noreferrer'>
             jnsjknn
           </a>
         </p>
