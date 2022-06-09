@@ -37,8 +37,8 @@ const App = () => {
     updateFiletypes(value);
   };
   const getProjectData = async () => {
-    const regex = /^(\w|\d)+((\s)*,*(\s)*(\w|\d)*)*$/g;
-    if (filetypes.match(regex) === null) {
+
+    if (filetypes.includes('.') {
       setFiletypesError(content.filetypesErrorMessage[language]);
       setButtonStatus("ERROR");
       setInterval(() => {
