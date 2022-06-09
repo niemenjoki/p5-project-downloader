@@ -8,7 +8,7 @@ const getZip = (projects, filetypes) => {
     const projectName = project.name;
     const files = project.files.filter((file) => {
       if (file.fileType === "folder") return true;
-      if (filetypes.split(",").includes(file.name.split(".").pop())) {
+      if (filetypes.split(",").map(name=>name.trim()).includes(file.name.split(".").pop())) {
         return true;
       }
       return false;
