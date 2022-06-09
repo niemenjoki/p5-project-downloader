@@ -2,7 +2,7 @@
 
 # p5-project-downloader
 
-An app to download a copy of all the projects from one's [p5.js web editor](https://editor.p5js.org) (Only js, css and html files are currently supported). The app was inspired by [this Reddit post](https://www.reddit.com/r/p5js/comments/kew2gc).
+An app to download a copy of all the projects from one's [p5.js web editor](https://editor.p5js.org) (Only text based filetypes are supported). The app was inspired by [this Reddit post](https://www.reddit.com/r/p5js/comments/kew2gc).
 
 The app is currently hosted on Heroku with a free dyno which means it may be temporarily unavailable. If you can't access the app, try again in a few minutes.
 
@@ -16,7 +16,7 @@ To make coding even more accessible to everyone, p5.js has a web editor which al
 
 ### Contributions
 
-I invite anyone to get involved with the future development of this app. Don't be afraid to make mistakes and ask for help when you need it. 
+I invite anyone to get involved with the future development of this app. Don't be afraid to make mistakes and ask for help when you need it.
 
 Here are some examples of what you can do to help:
 
