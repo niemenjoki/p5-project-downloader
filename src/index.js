@@ -38,7 +38,7 @@ const App = () => {
   };
   const getProjectData = async () => {
 
-    if (filetypes.includes('.') {
+    if (filetypes.includes('.')) {
       setFiletypesError(content.filetypesErrorMessage[language]);
       setButtonStatus("ERROR");
       setInterval(() => {
