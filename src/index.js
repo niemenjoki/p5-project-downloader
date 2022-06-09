@@ -11,8 +11,10 @@ import content from "./content.js";
 const App = () => {
   const [username, updateUsername] = React.useState("");
   const [projects, updateProjects] = React.useState([]);
+  const [filetypes, updateFiletypes] = React.useState("html, css, js");
   const [buttonStatus, setButtonStatus] = React.useState("DISABLED");
-  const [error, setError] = React.useState("");
+  const [usernameError, setUsernameError] = React.useState("");
+  const [filetypesError, setFiletypesError] = React.useState("");
   const [language, setLanguage] = React.useState("en");
   React.useEffect(() => {
     const languagePreference = localStorage.getItem("languagePreference");
@@ -26,7 +28,25 @@ const App = () => {
     }
     updateUsername(value);
   };
+  const updateFiletypesHandler = (value) => {
+    if (!value.length > 0) {
+      setButtonStatus("DISABLED");
+    } else {
+      setButtonStatus("ENABLED");
+    }
+    updateFiletypes(value);
+  };
   const getProjectData = async () => {
+    const regex = /^(\w|\d)+((\s)*,*(\s)*(\w|\d)*)*$/g;
+    if (filetypes.match(regex) === null) {
+      setFiletypesError(content.filetypesErrorMessage[language]);
+      setButtonStatus("ERROR");
+      setInterval(() => {
+        setFiletypesError(false);
+        setButtonStatus("DISABLED");
+      }, 4000);
+      return;
+    }
     if (username.length > 0) {
       setButtonStatus("LOADING");
       const URL = `/u/${username}`;
@@ -35,19 +55,21 @@ const App = () => {
         updateProjects(response.data);
         setButtonStatus("DOWNLOAD");
       } catch (e) {
-        setError(content.errorMessage[language]);
+        setUsernameError(content.downloadErrorMessage[language]);
         setButtonStatus("ERROR");
         setInterval(() => {
-          setError(false);
+          setUsernameError(false);
           setButtonStatus("DISABLED");
-        }, 6000);
+        }, 4000);
       }
     }
   };
 
   const downloadFiles = async () => {
     if (projects.length > 0) {
-      getZip(projects);
+      getZip(projects, filetypes);
+    } else {
+      console.log("ASDASD");
     }
   };
 
@@ -62,8 +84,16 @@ const App = () => {
         <Input
           onChange={updateUsernameHandler}
           value={username}
-          error={error}
+          error={usernameError}
           language={language}
+          label={content.username[language]}
+        />
+        <Input
+          onChange={updateFiletypesHandler}
+          value={filetypes}
+          error={filetypesError}
+          language={language}
+          label={content.filetypes[language]}
         />
         <Button
           status={buttonStatus}

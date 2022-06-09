@@ -1,5 +1,4 @@
 const getFilesToZip = (files, parentFolder, parentPath) => {
-  console.log({ getFilesToZip: { files, parentFolder, parentPath } });
   const zipFiles = [];
   files
     .filter((file) => parentFolder.children.includes(file.id))

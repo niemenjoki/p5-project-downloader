@@ -1,30 +1,27 @@
 import React from "react";
 import classes from "./Input.module.css";
-import content from "../../content";
 
-const Input = props => {
-  const [username, toggleUsername] = React.useState("");
+const Input = (props) => {
+  const [value, toggleValue] = React.useState(props.value);
 
   const inputFieldClasses = [classes.InputField];
-  if (username.length > 0) {
+  if (value.length > 0) {
     inputFieldClasses.push(classes.Used);
   }
   return (
     <div className={classes.Input}>
       <input
         className={inputFieldClasses.join(" ")}
-        type="text"
-        onChange={e => {
+        type='text'
+        onChange={(e) => {
           props.onChange(e.target.value);
-          toggleUsername(e.target.value);
+          toggleValue(e.target.value);
         }}
-        value={props.value}
+        value={value}
       />
       <span className={classes.Highlight}></span>
       <span className={classes.Underline}></span>
-      <label className={classes.InputLabel}>
-        {content.username[props.language]}
-      </label>
+      <label className={classes.InputLabel}>{props.label}</label>
       {<span className={classes.Error}>{props.error}</span>}
     </div>
   );
