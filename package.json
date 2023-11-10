@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.21.2",
+    "axios": "^1.6.0",
     "file-saver": "^2.0.5",
     "jszip": "^3.5.0",
     "react": "^17.0.1",
